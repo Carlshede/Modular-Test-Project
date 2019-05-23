@@ -15,6 +15,8 @@
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
     <import index="kvq8" ref="r:2e938759-cfd0-47cd-9046-896d85204f59(de.slisson.mps.hacks.editor)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -71,7 +73,6 @@
         <child id="1068580123135" name="body" index="3clF47" />
       </concept>
       <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_" />
-      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
@@ -117,6 +118,11 @@
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
     </language>
+    <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
+        <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
+    </language>
     <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers">
       <concept id="1213999088275" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" flags="ig" index="2BZ0e9" />
       <concept id="1213999117680" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" flags="nn" index="2BZ7hE" />
@@ -132,7 +138,6 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -182,39 +187,41 @@
                               </node>
                             </node>
                           </node>
-                          <node concept="3clFbJ" id="7fl7vDcexTe" role="3cqZAp">
-                            <node concept="3clFbS" id="7fl7vDcexTg" role="3clFbx">
-                              <node concept="2xdQw9" id="2XJLgqPqhhW" role="3cqZAp">
-                                <property role="2xdLsb" value="warn" />
-                                <node concept="3cpWs3" id="2XJLgqPqoiz" role="9lYJi">
-                                  <node concept="2OqwBi" id="2XJLgqPqqjO" role="3uHU7w">
-                                    <node concept="2OqwBi" id="2XJLgqPqp2O" role="2Oq$k0">
-                                      <node concept="37vLTw" id="2XJLgqPqojO" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="2XJLgqPqchq" resolve="editorComponent" />
-                                      </node>
-                                      <node concept="liA8E" id="2XJLgqPqq0v" role="2OqNvi">
-                                        <ref role="37wK5l" to="exr9:~EditorComponent.getEditedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getEditedNode" />
-                                      </node>
-                                    </node>
-                                    <node concept="liA8E" id="2XJLgqPqqUo" role="2OqNvi">
-                                      <ref role="37wK5l" to="mhbf:~SNode.getName():java.lang.String" resolve="getName" />
-                                    </node>
-                                  </node>
-                                  <node concept="Xl_RD" id="2XJLgqPqhhY" role="3uHU7B">
-                                    <property role="Xl_RC" value="Created component for node " />
-                                  </node>
+                          <node concept="3clFbF" id="7fl7vDceDMG" role="3cqZAp">
+                            <node concept="2OqwBi" id="7fl7vDceGgS" role="3clFbG">
+                              <node concept="2OqwBi" id="7fl7vDceEn9" role="2Oq$k0">
+                                <node concept="1KvdUw" id="7fl7vDceDME" role="2Oq$k0" />
+                                <node concept="liA8E" id="7fl7vDceFCh" role="2OqNvi">
+                                  <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
                                 </node>
                               </node>
-                            </node>
-                            <node concept="3clFbC" id="7fl7vDceBV6" role="3clFbw">
-                              <node concept="37vLTw" id="7fl7vDceC1f" role="3uHU7w">
-                                <ref role="3cqZAo" node="7fl7vDceuHp" resolve="node" />
-                              </node>
-                              <node concept="2OqwBi" id="7fl7vDceysy" role="3uHU7B">
-                                <node concept="37vLTw" id="7fl7vDcey8L" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="7fl7vDceuHp" resolve="node" />
+                              <node concept="liA8E" id="7fl7vDceHrB" role="2OqNvi">
+                                <ref role="37wK5l" to="lui2:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
+                                <node concept="1bVj0M" id="7fl7vDceHtD" role="37wK5m">
+                                  <node concept="3clFbS" id="7fl7vDceHtE" role="1bW5cS">
+                                    <node concept="2xdQw9" id="2XJLgqPqhhW" role="3cqZAp">
+                                      <property role="2xdLsb" value="warn" />
+                                      <node concept="3cpWs3" id="2XJLgqPqoiz" role="9lYJi">
+                                        <node concept="2OqwBi" id="2XJLgqPqqjO" role="3uHU7w">
+                                          <node concept="2OqwBi" id="2XJLgqPqp2O" role="2Oq$k0">
+                                            <node concept="37vLTw" id="2XJLgqPqojO" role="2Oq$k0">
+                                              <ref role="3cqZAo" node="2XJLgqPqchq" resolve="editorComponent" />
+                                            </node>
+                                            <node concept="liA8E" id="2XJLgqPqq0v" role="2OqNvi">
+                                              <ref role="37wK5l" to="exr9:~EditorComponent.getEditedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getEditedNode" />
+                                            </node>
+                                          </node>
+                                          <node concept="liA8E" id="2XJLgqPqqUo" role="2OqNvi">
+                                            <ref role="37wK5l" to="mhbf:~SNode.getName():java.lang.String" resolve="getName" />
+                                          </node>
+                                        </node>
+                                        <node concept="Xl_RD" id="2XJLgqPqhhY" role="3uHU7B">
+                                          <property role="Xl_RC" value="Created component for node " />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
                                 </node>
-                                <node concept="2Rxl7S" id="7fl7vDce_e2" role="2OqNvi" />
                               </node>
                             </node>
                           </node>
