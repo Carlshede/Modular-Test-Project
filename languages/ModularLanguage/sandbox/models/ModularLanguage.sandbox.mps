@@ -14,7 +14,11 @@
       <concept id="3418167274801138507" name="ModularLanguage.structure.Module" flags="ng" index="2q3cTd" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
+      <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
+        <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
+      </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -37,9 +41,13 @@
   </node>
   <node concept="312cEu" id="2XJLgqPoPBa">
     <property role="TrG5h" value="Test" />
+    <node concept="2tJIrI" id="7fl7vDcerkE" role="jymVt" />
+    <node concept="2tJIrI" id="7fl7vDcerkU" role="jymVt" />
+    <node concept="2tJIrI" id="7fl7vDcermB" role="jymVt" />
+    <node concept="2tJIrI" id="7fl7vDcerkJ" role="jymVt" />
     <node concept="3Tm1VV" id="2XJLgqPoPBb" role="1B3o_S" />
     <node concept="2q39Ns" id="2XJLgqPpfDO" role="lGtFl">
-      <ref role="2q32if" node="2XJLgqPoPB9" resolve="B" />
+      <ref role="2q32if" node="2XJLgqPoPB8" resolve="A" />
     </node>
   </node>
 </model>

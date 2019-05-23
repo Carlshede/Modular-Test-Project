@@ -8,6 +8,8 @@ import org.apache.log4j.LogManager;
 import de.slisson.mps.hacks.editor.EditorComponentCreationListener;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.logging.runtime.model.LoggingRuntime;
 import org.apache.log4j.Level;
 
@@ -20,8 +22,11 @@ public class EditorComponentListener_ProjectPluginPart extends ProjectPluginPart
   public void init(MPSProject project) {
     EditorComponentListener_ProjectPluginPart.this.editorComponentCreationListener = new EditorComponentCreationListener(project) {
       public void editorComponentCreate(EditorComponent editorComponent) {
-        if (editorComponent.getEditedNode() != null) {
-          LoggingRuntime.logMsgView(Level.WARN, "Created component for node " + editorComponent.getEditedNode().getName(), EditorComponentListener_ProjectPluginPart.class, null, null);
+        if (editorComponent != null && editorComponent.getEditedNode() != null) {
+          SNode node = editorComponent.getEditedNode();
+          if (SNodeOperations.getContainingRoot(node) == node) {
+            LoggingRuntime.logMsgView(Level.WARN, "Created component for node " + editorComponent.getEditedNode().getName(), EditorComponentListener_ProjectPluginPart.class, null, null);
+          }
         }
       }
       public void editorComponentDisposed(EditorComponent editorComponent) {

@@ -5,6 +5,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <root nodeRef="r:66245ce5-0cee-4280-9283-3ba4bb07d5ad(Initializer.plugin)/3418167274801449142">
     <file name="Initializer_ProjectPlugin.java">
@@ -21,39 +22,44 @@
   </root>
   <root nodeRef="r:66245ce5-0cee-4280-9283-3ba4bb07d5ad(Initializer.plugin)/3418167274801449161">
     <file name="EditorComponentListener_ProjectPluginPart.java">
-      <node id="3418167274801449161" at="15,0,16,0" concept="5" trace="LOG" />
-      <node id="3418167274801464557" at="16,0,17,0" concept="2" trace="editorComponentCreationListener" />
-      <node id="3418167274801534076" at="23,54,24,184" concept="1" />
-      <node id="3418167274801522101" at="29,6,30,95" concept="1" />
-      <node id="3418167274801528199" at="33,43,34,90" concept="1" />
-      <node id="3418167274801449161" at="17,0,19,0" concept="0" trace="EditorComponentListener_ProjectPluginPart#()V" />
-      <node id="3418167274801513569" at="27,0,29,0" concept="4" trace="editorComponentDisposed#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-      <node id="3418167274801540510" at="22,74,25,9" concept="3" />
-      <node id="3418167274801449161" at="32,0,36,0" concept="4" trace="dispose#(Ljetbrains/mps/project/MPSProject;)V" />
-      <node id="3418167274801513561" at="22,0,27,0" concept="4" trace="editorComponentCreate#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-      <node id="3418167274801509808" at="20,40,29,6" concept="1" />
-      <node id="3418167274801449161" at="19,0,32,0" concept="4" trace="init#(Ljetbrains/mps/project/MPSProject;)V" />
-      <scope id="3418167274801449161" at="17,54,17,54" />
-      <scope id="3418167274801513575" at="27,76,27,76" />
-      <scope id="3418167274801540512" at="23,54,24,184" />
-      <scope id="3418167274801527508" at="33,43,34,90" />
-      <scope id="3418167274801449161" at="17,0,19,0" />
-      <scope id="3418167274801513569" at="27,0,29,0">
+      <node id="3418167274801449161" at="17,0,18,0" concept="6" trace="LOG" />
+      <node id="3418167274801464557" at="18,0,19,0" concept="2" trace="editorComponentCreationListener" />
+      <node id="8346610445258976086" at="25,81,26,55" concept="5" />
+      <node id="3418167274801534076" at="27,64,28,186" concept="1" />
+      <node id="3418167274801522101" at="34,6,35,95" concept="1" />
+      <node id="3418167274801528199" at="38,43,39,90" concept="1" />
+      <node id="3418167274801449161" at="19,0,21,0" concept="0" trace="EditorComponentListener_ProjectPluginPart#()V" />
+      <node id="3418167274801513569" at="32,0,34,0" concept="4" trace="editorComponentDisposed#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
+      <node id="8346610445258989134" at="26,55,29,11" concept="3" />
+      <node id="3418167274801449161" at="37,0,41,0" concept="4" trace="dispose#(Ljetbrains/mps/project/MPSProject;)V" />
+      <node id="3418167274801540510" at="24,74,30,9" concept="3" />
+      <node id="3418167274801513561" at="24,0,32,0" concept="4" trace="editorComponentCreate#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
+      <node id="3418167274801509808" at="22,40,34,6" concept="1" />
+      <node id="3418167274801449161" at="21,0,37,0" concept="4" trace="init#(Ljetbrains/mps/project/MPSProject;)V" />
+      <scope id="3418167274801449161" at="19,54,19,54" />
+      <scope id="3418167274801513575" at="32,76,32,76" />
+      <scope id="8346610445258989136" at="27,64,28,186" />
+      <scope id="3418167274801527508" at="38,43,39,90" />
+      <scope id="3418167274801449161" at="19,0,21,0" />
+      <scope id="3418167274801513569" at="32,0,34,0">
         <var name="editorComponent" id="3418167274801513570" />
       </scope>
-      <scope id="3418167274801513567" at="22,74,25,9" />
-      <scope id="3418167274801449161" at="32,0,36,0">
+      <scope id="3418167274801540512" at="25,81,29,11">
+        <var name="node" id="8346610445258976089" />
+      </scope>
+      <scope id="3418167274801449161" at="37,0,41,0">
         <var name="project" id="3418167274801449161" />
       </scope>
-      <scope id="3418167274801513561" at="22,0,27,0">
+      <scope id="3418167274801513567" at="24,74,30,9" />
+      <scope id="3418167274801513561" at="24,0,32,0">
         <var name="editorComponent" id="3418167274801513562" />
       </scope>
-      <scope id="3418167274801452988" at="20,40,30,95" />
-      <scope id="3418167274801449161" at="19,0,32,0">
+      <scope id="3418167274801452988" at="22,40,35,95" />
+      <scope id="3418167274801449161" at="21,0,37,0">
         <var name="project" id="3418167274801449161" />
       </scope>
-      <unit id="3418167274801513558" at="21,89,29,5" name="Initializer.plugin.EditorComponentListener_ProjectPluginPart$1" />
-      <unit id="3418167274801449161" at="14,0,37,0" name="Initializer.plugin.EditorComponentListener_ProjectPluginPart" />
+      <unit id="3418167274801513558" at="23,89,34,5" name="Initializer.plugin.EditorComponentListener_ProjectPluginPart$1" />
+      <unit id="3418167274801449161" at="16,0,42,0" name="Initializer.plugin.EditorComponentListener_ProjectPluginPart" />
     </file>
     <file name="Initializer_ProjectPlugin.java">
       <node id="3418167274801449161" at="12,62,13,63" concept="1" />
