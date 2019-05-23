@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/ModularLanguage/ModularLanguage.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/ModularLanguage/runtime/ModularLanguage.runtime.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/ModularLanguage/sandbox/ModularLanguage.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/Initializer/Initializer.msd" folder="" />
+    </projectModules>
+  </component>
+</project>
